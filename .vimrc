@@ -82,3 +82,5 @@ let g:ycm_filetype_blacklist = {
       \}
 
 let g:ycm_global_ycm_extra_conf = '$HOME/.vim/ycm.py'
+nmap /jd :YcmCompleter GoTo<CR>
+
