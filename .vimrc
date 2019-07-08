@@ -37,6 +37,9 @@ augroup LangBy
     autocmd BufRead, BufNewFile *.hpp setfiletype c
 augroup END
 
+autocmd BufWinLeave ?* mkview
+autocmd BufWinEnter ?* silent loadview
+
 nmap <C-c> :nohlsearch<CR><Esc>
 nmap <C-s> :w<CR><Esc>
 nmap sh :vsplit<CR>:terminal ++curwin<CR>
@@ -76,3 +79,4 @@ let g:ycm_filetype_blacklist = {
       \ 'hs': 1
       \}
 
+let g:ycm_global_ycm_extra_conf = '$HOME/.vim/ycm.py'
