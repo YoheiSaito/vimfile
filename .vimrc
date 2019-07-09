@@ -4,6 +4,8 @@ colorscheme molokai
 let loaded_matchparen = 1
 
 set fenc=utf-8
+set noerrorbells
+set vb t_vb=
 
 set nobackup
 set noswapfile
