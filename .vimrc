@@ -4,8 +4,6 @@ colorscheme molokai
 let loaded_matchparen = 1
 
 set fenc=utf-8
-set noerrorbells
-set vb t_vb=
 
 set nobackup
 set noswapfile
@@ -44,9 +42,6 @@ autocmd BufWinEnter ?* silent loadview
 
 nmap <C-c> :nohlsearch<CR><Esc>
 nmap <C-s> :w<CR><Esc>
-nmap sh :vsplit<CR>:terminal ++curwin<CR>
-nmap sw <C-w>w
-nmap m s
 nmap <A-Right> <C-w>>
 nmap <A-Left> <C-w><
 nmap <A-Up> <C-w>-
@@ -59,6 +54,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'scrooloose/nerdtree'
 Plug 'Valloric/YouCompleteMe'
+Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/vim-easy-align'
 call plug#end()
 nmap <C-_> gcc
 vmap <C-_> gc
@@ -82,5 +79,8 @@ let g:ycm_filetype_blacklist = {
       \}
 
 let g:ycm_global_ycm_extra_conf = '$HOME/.vim/ycm.py'
-nmap /jd :YcmCompleter GoTo<CR>
 
+nnoremap /jd :YcmCompleter GoTo<CR>
+" let g:ycm_global_ycm_extra_conf = '$HOME/.vim/plugged/YouCompleteMe/.ycm_extra_conf.py'
+" easy_align
+vnoremap <silent> <Enter> :EasyAlign<cr>
